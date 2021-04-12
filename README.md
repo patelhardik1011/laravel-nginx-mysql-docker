@@ -30,4 +30,6 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
     docker-compose exec laravel-app php artisan key:generate
     docker-compose exec laravel-app php artisan cache:clear    
   ```  
+- Set DB_HOST as mysql container name in the .env file
+  
 - Visit http://localhost:8000 and enjoy Laravel!!

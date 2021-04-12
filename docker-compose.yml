@@ -15,7 +15,7 @@ services:
       - app-network
 
   #Nginx Service
-  larvel-nginx-server:
+  laravel-nginx-server:
     image: nginx:alpine
     container_name: laravel-nginx-container
     ports:
@@ -28,13 +28,17 @@ services:
       - app-network
 
   #MySQL Service
-  larvel-mysqldb:
+  laravel-mysqldb:
     image: mysql:5.7.22
     container_name: laravel-mysql-container
+    restart: unless-stopped
+    tty: true
     ports:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: laravel
+      MYSQL_USER: root
+      MYSQL_PASSWORD: laravel
       MYSQL_ROOT_PASSWORD: laravel
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
